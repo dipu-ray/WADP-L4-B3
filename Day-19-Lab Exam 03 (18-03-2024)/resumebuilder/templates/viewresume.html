@@ -1,0 +1,125 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+</head>
+<style>
+    /* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Center the content */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the profile section */
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Style headings */
+h1, h2 {
+    color: #333;
+}
+
+/* Style the education and work experience sections */
+.education, .work-experience {
+    margin-bottom: 20px;
+}
+
+/* Style skills, certifications, projects, and references sections */
+.skills, .certifications, .projects, .references {
+    margin-bottom: 20px;
+}
+
+/* Make headings visually stand out */
+.skills h2, .certifications h2, .projects h2, .references h2, .career-objective h2, .education h2, .work-experience h2  {
+    color: #007bff; /* Blue color */
+    border-bottom: 2px solid #007bff; /* Blue underline */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Style paragraphs */
+p {
+    color: #666;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .profile img {
+        width: 80px;
+    }
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="/{{ resume.Profile_pic }}" alt="Profile Picture" width="100px">
+            <h1>{{ resume.Full_name }}</h1>
+            <p>{{ resume.Address }}</p>
+            <p>{{ resume.Phone_number }}</p>
+            <p>{{ resume.Email_address }}</p>
+        </div>
+        <div class="career-objective">
+            <h2>Career Objective</h2>
+            <p>{{ resume.Career_objective }}</p>
+        </div>
+        <div class="education">
+            <h2>Education</h2>
+                <p><strong>{{ education.Degree }}</strong> - {{ education.Institution }}, {{ education.Graduation_year }}</p>
+        </div>
+        <div class="work-experience">
+            <h2>Work Experience</h2>
+                <p><strong>{{ work.Position }}</strong> at {{ work.Company }}, {{ work.Start_date }} - {{ work.End_date }}</p>
+        </div>
+        <div class="skills">
+            <h2>Skills</h2>
+            <p><strong>Hard Skills:</strong> {{ resume.Hard_skills }}</p>
+            <p><strong>Soft Skills:</strong> {{ resume.Soft_skills }}</p>
+        </div>
+        <div class="certifications">
+            <h2>Certifications</h2>
+            <p>{{ resume.Certifications }}</p>
+        </div>
+        <div class="projects">
+            <h2>Projects</h2>
+            <p>{{ resume.Projects }}</p>
+        </div>
+        <div class="references">
+            <h2>References</h2>
+            <p>{{ resume.References }}</p>
+        </div>
+
+    </div>
+</body>
+</html>
+
+{% endblock content %}
+    
