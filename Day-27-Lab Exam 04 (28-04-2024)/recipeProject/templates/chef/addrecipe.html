@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+</style>
+<body>
+<div>
+    <form action="{% url 'addrecipe' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="fname">Recipe title</label>
+    <input type="text" id="fname" name="recipe_title" placeholder="recipe title..">
+    <label for="fname">Ingredients</label>
+    <textarea type="text" id="fname" name="ingredients" placeholder="ingredients.."></textarea>
+    <label for="fname">Instructions</label>
+    <textarea type="text" id="fname" name="Instructions" placeholder="Instructions.."></textarea>
+    <label for="fname">preparation time</label>
+    <input type="text" id="fname" name="preparation_time" placeholder="preparation time..">
+    <label for="fname">cooking time</label>
+    <input type="text" id="fname" name="cooking_time" placeholder="cooking time..">
+    <label for="fname">total time</label>
+    <input type="text" id="fname" name="total_time" placeholder="total time..">
+ 
+
+    <label for="country">Difficulty level</label>
+    <select id="country" name="difficulty_level">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    <label for="fname">Nutritional info</label>
+    <textarea type="text" id="fname" name="nutritional_info" placeholder="nutritional info.."></textarea>
+    <label for="fname">Recipe image</label>
+    <input type="file" id="fname" name="recipe_image" placeholder="recipe image.."></br></br>
+  
+    <label for="country">Recipe category</label>
+    <select id="country" name="recipe_category">
+      <option value="breakfast">Breakfast</option>
+      <option value="launch">Launch</option>
+      <option value="dinner">dinner</option>
+    </select>
+
+    <label for="country">User tags</label>
+    <select id="country" name="user_tags">
+      <option value="vegetarian">Vegetarian</option>
+      <option value="non-vegetarian">Non vegetarian</option>
+    </select>
+    <label for="fname">Total calorie</label>
+    <input type="text" id="fname" name="total_calorie" placeholder="total total calorie..">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
+
+
+
+{% endblock content %}

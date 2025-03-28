@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+<div>
+  <form action="{% url 'signup' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lname" placeholder="Your last name..">
+    <label for="lname">Username</label>
+    <input type="text" id="lname" name="uname" placeholder="Your username..">
+    <label for="lname">Email</label>
+    <input type="email" id="lname" name="email" placeholder="Your username..">
+    <label for="lname">Password</label>
+    <input type="password" id="lname" name="password" placeholder="Your password..">
+    <label for="lname">Confirm Password</label>
+    <input type="password" id="lname" name="cpassword" placeholder="Your password..">
+    <label for="lname">Profile Pictured</label>
+    <input type="file" id="lname" name="picture" placeholder="Your password..">
+    <label for="lname">Date of Birth</label>
+    <input type="date" id="lname" name="dob" placeholder="Your Date of Birth..">
+    <label for="lname">Address</label>
+    <input type="text" id="lname" name="address" placeholder="Your Address..">
+
+    <label for="country">Blood Group</label>
+    <select id="country" name="blood_group">
+      <option value="a+">A Positive</option>
+      <option value="a-">A Negative</option>
+      <option value="b+">B Positive</option>
+      <option value="b-">B Negative</option>
+      <option value="ab+">AB Positive</option>
+      <option value="ab-">AB Negative</option>
+      <option value="o+">O Positive</option>
+      <option value="o-">O Negative</option>
+    </select>
+
+    <label for="country">User Type</label>
+    <select id="country" name="user_type">
+      <option value="recruiter">Job Recruiter</option>
+      <option value="seeker">Job Seeker</option>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+  <a href="{% url 'signin' %}">Already have an account?</a>
+</div>
+
+</body>
+</html>
+
+

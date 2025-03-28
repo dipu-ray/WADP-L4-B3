@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<div>
+  <form action="{% url 'signup' %}" method="POST">
+    {% csrf_token %}
+    <label for="fname">Username</label>
+    <input type="text" id="fname" name="username" placeholder="Your username..">
+
+    <label for="lname">E-mail</label>
+    <input type="email" id="lname" name="email" placeholder="Your email.."><br>
+    <label for="lname">Password</label>
+    <input type="password" id="lname" name="password" placeholder="Your password.."><br>
+    <label for="lname">Confirm Password</label>
+    <input type="password" id="lname" name="cpassword" placeholder="Enter password again.."><br>
+    
+    <label for="country">Gender</label>
+    <select id="country" name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <label for="fname">Age</label>
+    <input type="text" id="fname" name="age" placeholder="Your Age.."><br>
+    <label for="fname">City</label>
+    <input type="text" id="fname" name="city" placeholder="Your City..">
+    <label for="fname">Country</label>
+    <input type="text" id="fname" name="country" placeholder="Your Country..">
+    <label for="country">User Type</label>
+    <select id="country" name="user_type">
+      <option value="chef">Chef</option>
+      <option value="viewer">Viewer</option>
+    </select>
+    <input type="submit" value="Submit">
+<a href="{% url 'signin' %}">Already have an account? Singin here</a>
+  </form>
+</div>
+
+</body>
+</html>
+
+
