@@ -1,0 +1,13 @@
+
+{% if messages %}
+    
+    {% for message in messages %}
+        
+        {% if message.tags == 'success' %}
+            {{message}}
+        {% endif %}
+            
+    {% endfor %}
+        
+{% endif %}
+    
