@@ -1,0 +1,15 @@
+<button class="edit-profile-btn"><a href="{% url 'profiles_info' %}">Profile Info</a></button>
+<button class="edit-profile-btn"><a href="{% url 'editprofile' %}">Edit profile</a></button>
+
+{% if user.user_types == 'recruiter' %}
+<button class="edit-profile-btn"><a href="{% url 'recruiterbasicinfo' %}">Recruiter Basic Info</a></button>
+<button class="edit-profile-btn"><a href="{% url 'recruitercontact' %}">Recruiter Contact</a></button>
+    <button class="posted-job-btn"><a href="{% url 'postedjob' %}">Posted Job</a></button>
+{% elif user.user_types == 'seeker' %}
+<button class="edit-profile-btn"><a href="{% url 'seekerbasicinfo' %}">Seeker Basic Info</a></button>
+<button class="edit-profile-btn"><a href="{% url 'seekercontact' %}">Seeker Contact</a></button>
+<button class="edit-profile-btn"><a href="{% url 'seekereducation' %}">Seeker Education</a></button>
+<button class="edit-profile-btn"><a href="{% url 'seekerworkex' %}">Seeker Work Experience</a></button>
+<button class="applied-job-btn"><a href="{% url 'appliedjob' %}">Applied Job</a></button>
+{% endif %}
+<button class="edit-profile-btn"><a href="">Change Password</a></button>

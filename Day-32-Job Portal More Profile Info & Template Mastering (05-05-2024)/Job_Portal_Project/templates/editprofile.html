@@ -1,0 +1,115 @@
+{% extends 'profile.html' %}
+
+{% block info %}
+    <h3>Edit Profile</h3>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="profile_photo">Profile Photo</label><br>
+        <img src="/{{user.profile_photo}}" width="100px" alt=""><br>
+        <input type="file" id="profile_photo" name="profile_photo"><br><br>
+
+        <label for="first_name">First Name</label><br>
+        <input type="text" id="first_name" name="first_name" value="{{request.user.first_name}}"><br><br>
+
+        <label for="last_name">Last Name</label><br>
+        <input type="text" id="last_name" name="last_name" value="{{request.user.last_name}}"><br><br>
+
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" value="{{request.user.username}}"><br><br>
+
+        <label for="age">Age</label><br>
+        <input type="number" id="age" name="age" value="{{request.user.age}}"><br><br>
+
+        <label for="gender">Gender</label><br>
+        <input type="text" id="gender" name="gender" value="{{request.user.gender}}"><br><br>
+
+        <label for="city">City</label><br>
+        <input type="text" id="city" name="city" value="{{request.user.city}}"><br><br>
+
+        <label for="country">Country</label><br>
+        <input type="text" id="country" name="country" value="{{request.user.country}}"><br><br>
+
+        <label for="blood_group">Blood Group</label><br>
+        <input type="text" id="blood_group" name="blood_group" value="{{request.user.blood_group}}"><br><br>
+
+        <label for="user_types">User Type</label><br>
+        <input type="text" id="user_types" name="user_types" value="{{request.user.user_types}}"><br><br>
+
+        {% if user.user_types == 'seeker' %}
+            <label for="qualification">Qualification</label><br>
+            <input type="text" id="qualification" name="qualification" value="{{request.user.seekerprofilemodel.Qualification}}"><br><br>
+
+            <label for="experience">Experience</label><br>
+            <input type="text" id="experience" name="experience" value="{{request.user.seekerprofilemodel.Experience}}"><br><br>
+
+            <label for="skills">Skills</label><br>
+            <input type="text" id="skills" name="skills" value="{{request.user.seekerprofilemodel.Skills}}"><br><br>
+            
+            <h3>Seeker Basic Info</h3>
+            <label for="recruiter_name">Father name</label><br>
+            <input type="text" id="recruiter_name" name="father_name" value="{{request.user.seekerbasicinfomodel.father_name}}"><br><br>
+            <label for="recruiter_name">Mother name</label><br>
+            <input type="text" id="recruiter_name" name="mother_name" value="{{request.user.seekerbasicinfomodel.mother_name}}"><br><br>
+            <label for="recruiter_name">Hobby</label><br>
+            <input type="text" id="recruiter_name" name="hobby" value="{{request.user.seekerbasicinfomodel.hobby}}"><br><br>
+            <label for="recruiter_name">Languages</label><br>
+            <input type="text" id="recruiter_name" name="languages" value="{{request.user.seekerbasicinfomodel.languages}}"><br><br>
+            
+            <h3>Seeker Contact</h3>
+            <label for="recruiter_name">Mobile number</label><br>
+            <input type="text" id="recruiter_name" name="mobile_number" value="{{request.user.seekercontactmodel.mobile_number}}"><br><br>
+            <label for="recruiter_name">Email</label><br>
+            <input type="text" id="recruiter_name" name="email" value="{{request.user.seekercontactmodel.email}}"><br><br>
+            <label for="recruiter_name">Address</label><br>
+            <input type="text" id="recruiter_name" name="address" value="{{request.user.seekercontactmodel.address}}"><br><br>
+            
+            <h3>Seeker Education</h3>
+            <label for="recruiter_name">Education name</label><br>
+            <input type="text" id="recruiter_name" name="education_name" value="{{request.user.seekereducationmodel.education_name}}"><br><br>
+            <label for="recruiter_name">Education year</label><br>
+            <input type="text" id="recruiter_name" name="education_year" value="{{request.user.seekereducationmodel.education_year}}"><br><br>
+            <label for="recruiter_name">Education institute</label><br>
+            <input type="text" id="recruiter_name" name="education_institute" value="{{request.user.seekereducationmodel.education_institute}}"><br><br>
+            
+            <h3>Seeker Work Experience</h3>
+            <label for="Position">Education institute</label><br>
+            <input type="text" id="recruiter_name" name="Position" value="{{request.user.seekerworkexmodel.Position}}"><br><br>
+            <label for="Position">Company name</label><br>
+            <input type="text" id="recruiter_name" name="Company_name" value="{{request.user.seekerworkexmodel.Company_name}}"><br><br>
+            <label for="Position">Duration</label><br>
+            <input type="text" id="recruiter_name" name="Duration" value="{{request.user.seekerworkexmodel.Duration}}"><br><br>
+            
+        {% elif user.user_types == 'recruiter' %}
+            <label for="company_name">Company Name</label><br>
+            <input type="text" id="company_name" name="company_name" value="{{request.user.seekercontactmodel.Company_name}}"><br><br>
+
+            <label for="company_location">Company Location</label><br>
+            <input type="text" id="company_location" name="company_location" value="{{request.user.recruiterprofilemodel.Company_location}}"><br><br>
+
+            <label for="recruiter_name">Recruiter Name</label><br>
+            <input type="text" id="recruiter_name" name="recruiter_name" value="{{request.user.recruiterprofilemodel.Recruiter_Name}}"><br><br>
+
+            <h3>Recruiter Basic Info</h3>
+            <label for="recruiter_name">Father name</label><br>
+            <input type="text" id="recruiter_name" name="father_name" value="{{request.user.recruiterbasicinfomodel.father_name}}"><br><br>
+            <label for="recruiter_name">Mother name</label><br>
+            <input type="text" id="recruiter_name" name="mother_name" value="{{request.user.recruiterbasicinfomodel.mother_name}}"><br><br>
+            <label for="recruiter_name">Hobby</label><br>
+            <input type="text" id="recruiter_name" name="hobby" value="{{request.user.recruiterbasicinfomodel.hobby}}"><br><br>
+            <label for="recruiter_name">Languages</label><br>
+            <input type="text" id="recruiter_name" name="languages" value="{{request.user.recruiterbasicinfomodel.languages}}"><br><br>
+            <h3>Recruiter Contact</h3>
+            <label for="recruiter_name">Mobile number</label><br>
+            <input type="text" id="recruiter_name" name="mobile_number" value="{{request.user.recruitercontactmodel.mobile_number}}"><br><br>
+            <label for="recruiter_name">Email</label><br>
+            <input type="text" id="recruiter_name" name="email" value="{{request.user.recruitercontactmodel.email}}"><br><br>
+            <label for="recruiter_name">Address</label><br>
+            <input type="text" id="recruiter_name" name="address" value="{{request.user.recruitercontactmodel.address}}"><br><br>
+
+
+        {% endif %}
+        
+        <button type="submit">Save Changes</button>
+    </form>
+{% endblock info %}

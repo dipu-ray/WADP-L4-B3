@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+<table id="customers">
+  <tr>
+    <th>Created by</th>
+    <th>Company logo</th>
+    <th>Job title</th>
+    <th>Job types</th>
+    <th>Action</th>
+  </tr>
+  
+  {% for i in jobs %}
+  <tr>
+    <td>{{i.Created_by}}</td>
+    <td><img src="/{{i.Company_logo}}" width="50px" alt=""></td>
+    <td>{{i.Job_title}}</td>
+    <td>{{i.Job_types}}</td>
+    <td>
+      
+      {% if user.user_types == 'recruiter' %}
+      <a href="{% url 'deletejob' i.id %}">Delete</a>
+      <a href="{% url 'editjob' i.id %}">Edit</a>
+      {% endif %}
+        
+
+        <a href="{% url 'viewsinglejob' i.id %}">View</a>
+
+    </td>
+ </tr>
+  {% endfor %}
+    
+
+</table>
+
+</body>
+</html>
+
+
+
+{% endblock content %}

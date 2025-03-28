@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+<div>
+  <form action="{% url 'signup' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="fname">Profile photo</label>
+    <input type="file" id="fname" name="profile_photo"><br>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="first_name" placeholder="Your first name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="last_name" placeholder="Your last name..">
+    <label for="lname">Username</label>
+    <input type="text" id="lname" name="username" placeholder="Your Username..">
+    <label for="lname">Password</label>
+    <input type="password" id="lname" name="password" placeholder="Your Password..">
+    <label for="lname">Confirm Password</label>
+    <input type="password" id="lname" name="cpassword" placeholder="Your Password.."><br>
+    <label for="lname">Age</label>
+    <input type="text" id="lname" name="age" placeholder="Your last Age..">
+    <label for="lname">Gender</label>
+    <select id="country" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    <label for="lname">City</label>
+    <input type="text" id="lname" name="city" placeholder="Your City..">
+    <label for="lname">Country</label>
+    <input type="text" id="lname" name="country" placeholder="Your Country..">
+
+    <label for="country">Blood Group</label>
+    <select id="country" name="blood_group">
+      <option value="a+">A Positive</option>
+      <option value="b+">B Positive</option>
+      <option value="ab+">AB Positive</option>
+      <option value="o+">O Positive</option>
+    </select>
+    <label for="country">User types</label>
+    <select id="country" name="user_types">
+      <option value="recruiter">Job Recruiter</option>
+      <option value="seeker">Job Seeker</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+  <a href="{% url 'signin' %}">Already have an account?</a>
+</div>
+
+</body>
+</html>
+
+
