@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% for i in posted_job %}
+    <h1>{{ i.Job_title }}</h1>
+    <p><strong>Created by :</strong> {{ i.Created_by }}</p>
+    <p><strong>Company Name:</strong> {{ i.Company_name }}</p>
+    <p><strong>Address:</strong> {{ i.Address }}</p>
+    <p><strong>Company Description:</strong> {{ i.Company_description }}</p>
+    <p><strong>Job Description:</strong> {{ i.Job_description }}</p>
+    <p><strong>Qualification:</strong> {{ i.Qualification }}</p>
+    <p><strong>Salary Information:</strong> {{ i.Salary_information }}</p>
+    <p><strong>Deadline:</strong> {{ i.Deadline }}</p>
+    <p><strong>Designation:</strong> {{ i.Designation }}</p>
+    <p><strong>Experience Required:</strong> {{ i.Experience }}</p>
+    {% endfor %}
+</body>
+</html>
+
+{% endblock content %}

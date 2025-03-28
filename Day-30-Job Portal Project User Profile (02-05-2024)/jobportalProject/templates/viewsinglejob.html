@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <style>
+        /* Basic CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .job {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        p {
+            margin: 5px 0;
+        }
+        
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    {% for job in jobs %}
+    <div class="job">
+        <h2>{{ job.Job_title }}</h2>
+        <p><strong>Company Name:</strong> {{ job.Company_name }}</p>
+        <p><strong>Address:</strong> {{ job.Address }}</p>
+        <p><strong>Company Description:</strong> {{ job.Company_description }}</p>
+        <p><strong>Job Description:</strong> {{ job.Job_description }}</p>
+        <p><strong>Qualification:</strong> {{ job.Qualification }}</p>
+        <p><strong>Salary Information:</strong> {{ job.Salary_information }}</p>
+        <p><strong>Deadline:</strong> {{ job.Deadline }}</p>
+        <p><strong>Designation:</strong> {{ job.Designation }}</p>
+        <p><strong>Experience:</strong> {{ job.Experience }}</p>
+        <p><strong>Created By:</strong> {{ job.Created_by }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
+
+{% endblock content %}

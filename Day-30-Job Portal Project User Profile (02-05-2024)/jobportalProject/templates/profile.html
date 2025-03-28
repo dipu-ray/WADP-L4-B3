@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center align the content */
+        }
+        h1 {
+            color: #333;
+        }
+        .profile-info {
+            margin-top: 20px;
+        }
+        .profile-info p {
+            margin-bottom: 10px;
+        }
+        img.profile-pic {
+            max-width: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .profile-info strong {
+            font-weight: bold;
+        }
+        .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Profile</h1>
+        <div class="profile-info">
+            <img src="/{{ user.picture }}" alt="Profile Picture" class="profile-pic">
+            <!-- Button group -->
+            <div class="button-group">
+                <a href="{% url 'editprofile' %}" class="button">Edit Profile</a>
+                
+                {% if user.user_type == 'seeker' %}
+                <a href="" class="button">Applied Job</a>
+                {% else %}
+                <a href="{% url 'postedjob' %}" class="button">Posted Job</a>
+                {% endif %}
+
+            </div>
+            <p><strong>First Name:</strong> {{ user.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Date of Birth:</strong> {{ user.dob }}</p>
+            <p><strong>Address:</strong> {{ user.address }}</p>
+            <p><strong>Blood Group:</strong> {{ user.blood_group }}</p>
+            <p><strong>User Type:</strong> {{ user.user_type }}</p>
+            {% if user.jobrecruiterprofile %}
+            <p><strong>Skills Required:</strong> {{ user.jobrecruiterprofile.Skills_Required }}</p>
+            <p><strong>Work Schedule:</strong> {{ user.jobrecruiterprofile.Work_Schedule }}</p>
+            {% elif user.jobseekerprofile %}
+            <p><strong>Skills:</strong> {{ user.jobseekerprofile.skills }}</p>
+            <p><strong>Work experience:</strong> {{ user.jobseekerprofile.work_experience }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock content %}
