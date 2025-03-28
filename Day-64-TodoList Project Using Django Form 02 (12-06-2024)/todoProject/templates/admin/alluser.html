@@ -1,0 +1,38 @@
+{% extends 'common/base.html' %}
+
+
+{% block content %}
+
+    <table border="2px">
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Username</th>
+            <th>User type</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Profile picture</th>
+            <th>Total Task</th>
+            <th>Total Category</th>
+            <th>Action</th>
+        </tr>
+        {% for i in users %}
+        <tr>
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.username}}</td>
+            <td>{{i.user_type}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.city}}</td>
+            <td> <img src="/{{i.profile_pic}}" width="50px" alt=""></td>
+            <td>{{total_task}}</td>
+            <td>{{total_cat}}</td>
+            <td>
+                <a href="{% url 'deleteuser' i.id %}">delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+        
+{% endblock content %}

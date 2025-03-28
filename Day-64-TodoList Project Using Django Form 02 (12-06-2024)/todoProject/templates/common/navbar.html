@@ -1,0 +1,13 @@
+<ul>
+    <li><a class="active" href="{% url 'dashboard' %}">Dashboard</a></li>
+    {% if user.user_type == 'admin' %}
+    <li><a href="{% url 'alluser' %}">All user</a></li>
+    
+    {% elif user.user_type == 'user' %}
+    <li><a href="{% url 'addcategory' %}">Add Category</a></li>
+    <li><a href="{% url 'categorylist' %}">Category List</a></li>
+    <li><a href="{% url 'addtask' %}">Add Task</a></li>
+    <li><a href="{% url 'tasklist' %}">Task list</a></li>
+    {% endif %}
+    <li><a href="{% url 'logoutpage' %}">Log out</a></li>
+</ul>
