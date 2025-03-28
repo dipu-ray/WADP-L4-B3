@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>Student Table</h1>
+<table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Department</th>
+    <th>City</th>
+  </tr>
+  
+  {% for i in student %}
+    <tr>
+        <td>{{i.Name}}</td>
+        <td>{{i.Department}}</td>
+        <td>{{i.City}}</td>
+    </tr>
+  {% endfor %}
+    
+</table>
+<h1>Mark Table</h1>
+<table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Roll</th>
+    <th>Mark</th>
+  </tr>
+  
+  {% for i in mark %}
+    <tr>
+        <td>{{i.Name}}</td>
+        <td>{{i.Roll}}</td>
+        <td>{{i.Mark}}</td>
+    </tr>
+  {% endfor %}
+    
+</table>
+<h1>Teacher Table</h1>
+<table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Department</th>
+    <th>City</th>
+  </tr>
+  
+  {% for i in teacher %}
+    <tr>
+        <td>{{i.Name}}</td>
+        <td>{{i.Department}}</td>
+        <td>{{i.City}}</td>
+    </tr>
+  {% endfor %}
+    
+</table>
+<h1>Subject Table</h1>
+<table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Mark</th>
+  </tr>
+  
+  {% for i in subject %}
+    <tr>
+        <td>{{i.Name}}</td>
+        <td>{{i.Category}}</td>
+        <td>{{i.Mark}}</td>
+    </tr>
+  {% endfor %}
+    
+</table>
+<h1>University Table</h1>
+<table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Rank</th>
+    <th>Location</th>
+  </tr>
+  
+  {% for i in university %}
+    <tr>
+        <td>{{i.Name}}</td>
+        <td>{{i.Rank}}</td>
+        <td>{{i.Location}}</td>
+    </tr>
+  {% endfor %}
+    
+</table>
+
+</body>
+</html>
+
+{% endblock content %}
+    
