@@ -1,0 +1,11 @@
+{% extends 'profile.html' %}
+
+
+{% block info %}
+<h3>Mobile number:</h3>
+<p>{{user.seekercontactmodel.mobile_number}}</p>
+<h3>Email:</h3>
+<p>{{user.seekercontactmodel.email}}</p>
+<h3>Address:</h3>
+<p>{{user.seekercontactmodel.address}}</p>
+{% endblock info %}

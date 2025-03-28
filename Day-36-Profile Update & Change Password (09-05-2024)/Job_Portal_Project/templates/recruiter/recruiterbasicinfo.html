@@ -1,0 +1,14 @@
+{% extends 'profile.html' %}
+
+
+{% block info %}
+    <h3>Father Name:</h3>
+    <p>{{user.recruiterbasicinfomodel.father_name}}</p>
+    <h3>Mother Name:</h3>
+    <p>{{user.recruiterbasicinfomodel.mother_name}}</p>
+    <h3>Hobby:</h3>
+    <p>{{user.recruiterbasicinfomodel.hobby}}</p>
+    <h3>Languages:</h3>
+    <p>{{user.recruiterbasicinfomodel.languages}}</p>
+
+{% endblock info %}

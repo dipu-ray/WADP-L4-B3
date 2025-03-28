@@ -1,0 +1,45 @@
+{% extends 'profile.html' %}
+
+
+{% block info %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posted Job</title>
+</head>
+<body>
+    
+    {% for i in jobs %}
+    <h3>Company logo</h3>
+    <img src="/{{i.Company_logo}}" width="100px" alt="">
+    <h3>Job title</h3>
+    <p>{{i.Job_title}}</p>
+    <h3>Job description</h3>
+    <p>{{i.Job_description}}</p>
+    <h3>Job location</h3>
+    <p>{{i.Job_location}}</p>
+    <h3>Requirements</h3>
+    <p>{{i.Requirements}}</p>
+    <h3>Qualifications</h3>
+    <p>{{i.Qualifications}}</p>
+    <h3>Job_types</h3>
+    <p>{{i.Job_types}}</p>
+    <h3>Workplace</h3>
+    <p>{{i.Workplace}}</p>
+    <h3>Salary</h3>
+    <p>{{i.Salary}}</p>
+    <h3>Experience</h3>
+    <p>{{i.Experience}}</p>
+    <h3>Deadline</h3>
+    <p>{{i.Deadline}}</p>
+    <h3>Created_by</h3>
+    <p>{{i.Created_by}}</p>
+    {% endfor %}
+        
+
+</body>
+</html>
+{% endblock info %}
+    

@@ -1,0 +1,40 @@
+{% extends 'profile.html' %}
+
+{% block info %}
+<div class="profile-info">
+    <h3>First Name</h3>   
+    <p>{{request.user.first_name}}</p>
+    <h3>Last Name</h3>   
+    <p>{{request.user.last_name}}</p>
+    <h3>Username</h3>   
+    <p>{{request.user.username}}</p>
+    <h3>Age</h3>   
+    <p>{{request.user.age}}</p>
+    <h3>Gender</h3>   
+    <p>{{request.user.gender}}</p>
+    <h3>City</h3>   
+    <p>{{request.user.city}}</p>
+    <h3>Country</h3>   
+    <p>{{request.user.country}}</p>
+    <h3>Blood Group</h3>   
+    <p>{{request.user.blood_group}}</p>
+    <h3>User Type</h3>   
+    <p>{{request.user.user_types}}</p>
+
+    {% if user.user_types == 'seeker' %}
+        <h3>Qualification</h3>   
+        <p>{{request.user.seekerprofilemodel.Qualification}}</p>
+        <h3>Experience</h3>   
+        <p>{{request.user.seekerprofilemodel.Experience}}</p>
+        <h3>Skills</h3>   
+        <p>{{request.user.seekerprofilemodel.Skills}}</p>
+    {% elif user.user_types == 'recruiter' %}
+        <h3>Company Name</h3>   
+        <p>{{request.user.recruiterprofilemodel.Company_name}}</p>
+        <h3>Company Location</h3>   
+        <p>{{request.user.recruiterprofilemodel.Company_location}}</p>
+        <h3>Recruiter Name</h3>   
+        <p>{{request.user.recruiterprofilemodel.Recruiter_Name}}</p>
+    {% endif %}
+</div>
+{% endblock info %}

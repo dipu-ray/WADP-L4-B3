@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job View</title>
+</head>
+<body>
+    <h3>Company logo</h3>
+    <img src="/{{job.Company_logo}}" width="100px" alt="">
+    <h3>Job_title</h3>
+    <p>{{job.Job_title}}</p>
+    <h3>Job_description</h3>
+    <p>{{job.Job_description}}</p>
+    <h3>Job_location</h3>
+    <p>{{job.Job_location}}</p>
+    <h3>Requirements</h3>
+    <p>{{job.Requirements}}</p>
+    <h3>Qualifications</h3>
+    <p>{{job.Qualifications}}</p>
+    <h3>Job_types</h3>
+    <p>{{job.Job_types}}</p>
+    <h3>Workplace</h3>
+    <p>{{job.Workplace}}</p>
+    <h3>Salary</h3>
+    <p>{{job.Salary}}</p>
+    <h3>Experience</h3>
+    <p>{{job.Experience}}</p>
+    <h3>Deadline</h3>
+    <p>{{job.Deadline}}</p>
+    <h3>Created_by</h3>
+    <p>{{job.Created_by}}</p>
+</body>
+</html>
+{% endblock content %}
+    
