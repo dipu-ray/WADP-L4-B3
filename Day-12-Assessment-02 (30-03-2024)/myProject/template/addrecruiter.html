@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h3>Add Recruiter</h3>
+
+<div>
+  <form action="{% url 'addrecruiter' %}" method="POST">
+    {% csrf_token %}
+    <label for="fname">Full Name</label>
+    <input type="text" id="fname" name="full_name" placeholder="Full Name..">
+    <label for="fname">Email</label>
+    <input type="text" id="fname" name="email" placeholder="Email">
+    <label for="fname">Phone Number</label>
+    <input type="text" id="fname" name="phone_number" placeholder="Phone Number">
+    <label for="fname">Address</label>
+    <input type="text" id="fname" name="address" placeholder="Address">
+    <label for="fname">Job Title</label>
+    <input type="text" id="fname" name="job_title" placeholder="Job Title">
+    <label for="fname">Linkedin Profile</label>
+    <input type="text" id="fname" name="linkedin_profile" placeholder="Linkedin Profile">
+    <label for="fname">University</label>
+    <input type="text" id="fname" name="university" placeholder="University">
+    <label for="fname">Degree</label>
+    <input type="text" id="fname" name="degree" placeholder="Degree">
+    <label for="fname">Languages</label>
+    <input type="text" id="fname" name="languages" placeholder="Languages">
+    <label for="fname">Years of Experience</label>
+    <input type="text" id="fname" name="years_of_experience" placeholder="Years of Experience">
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
+
+{% endblock content %}
+    
