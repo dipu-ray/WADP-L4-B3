@@ -1,0 +1,13 @@
+
+{% if messages %}
+    
+    {% for i in messages %}
+        
+        {% if i.tags == 'warning' %}
+            {{i}}
+        {% endif %}
+            
+    {% endfor %}
+        
+{% endif %}
+    

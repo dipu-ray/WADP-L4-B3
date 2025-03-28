@@ -1,0 +1,18 @@
+{% extends 'profile/baseprofile.html' %}
+
+
+{% block proinfo %}
+<div>
+    <form action="{% url 'editprofile' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="fname">Username</label>
+      <input type="text" id="fname" value="{{user.username}}" name="username" readonly>
+      <br>
+      <input type="submit" value="Submit">
+  </form>
+  </div>
+{% endblock proinfo %}
+    
+
+
+

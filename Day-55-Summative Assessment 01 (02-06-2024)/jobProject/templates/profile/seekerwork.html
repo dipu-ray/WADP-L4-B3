@@ -1,0 +1,17 @@
+{% extends 'profile/baseprofile.html' %}
+
+{% block proinfo %}
+
+{% for i in seekerwork %}
+    
+<!-- seeker work exprerience -->
+<h3>Work name</h3>
+<p>{{i.work_name}}</p>
+<h3>Work location</h3>
+<p>{{i.work_location}}</p>
+<h3>Work time</h3>
+<p>{{i.work_time}}</p>
+<hr>
+{% endfor %}
+    
+{% endblock proinfo %}

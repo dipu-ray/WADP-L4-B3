@@ -1,0 +1,17 @@
+{% extends 'profile/baseprofile.html' %}
+
+{% block proinfo %}
+<!-- seeker education  -->
+
+{% for i in seekeredu %}
+    
+<h3>Education name</h3>
+<p>{{i.edu_name}}</p>
+<h3>Education institute</h3>
+<p>{{i.edu_institute}}</p>
+<h3>Education location</h3>
+<p>{{i.edu_location}}</p>
+<hr>
+{% endfor %}
+    
+{% endblock proinfo %}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<div>
+  {% include 'common/messages.html' %}
+  <form action="{% url 'signup' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="fname">Username</label>
+    <input type="text" id="fname" name="username" required>
+    
+    <label for="lname">Password</label>
+    <input type="password" id="lname" name="password" required>
+    <br><br>
+    <label for="lname">Confirm Password</label>
+    <input type="password" id="lname" name="confirm_password" required>
+    <br><br>
+    <label for="country">Select Role</label>
+    <select id="country" name="role" required>
+      <option value="recruiter">Job Recruiter</option>
+      <option value="seeker">Job Seeker</option>
+    </select>
+    
+    <label for="fname">City</label>
+    <input type="text" id="fname" name="city" required>
+
+    <label for="country">Select Gender</label>
+    <select id="country" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="others">Others</option>
+    </select>
+    
+    <label for="lname">Profile Picture</label>
+    <input type="file" id="lname" name="profile_picture"  accept="image/jpeg, image/png" required>
+
+    <br><br>
+    <label for="lname">Email</label>
+    <input type="email" id="lname" name="email" required>
+
+    <input type="submit" value="Submit">
+  </form>
+  <a href="{% url 'signin' %}">Already have an account?</a>
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,11 @@
+{% extends 'profile/baseprofile.html' %}
+
+{% block proinfo %}
+<!-- recruiter profile basic -->
+<h3>Company Name</h3>
+<p>{{user.recruitermodel.company_name}}</p>
+<h3>Company Location</h3>
+<p>{{user.recruitermodel.company_location}}</p>
+<h3>Company Details</h3>
+<p>{{user.recruitermodel.company_details}}</p>
+{% endblock proinfo %}

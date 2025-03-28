@@ -1,0 +1,11 @@
+{% extends 'profile/baseprofile.html' %}
+
+{% block proinfo %}
+<!-- seeker basic info  -->
+<h3>Father name</h3>
+<p>{{user.seekermodel.father_name}}</p>
+<h3>Mother name</h3>
+<p>{{user.seekermodel.mother_name}}</p>
+<h3>Hobby</h3>
+<p>{{user.seekermodel.hobby}}</p>
+{% endblock proinfo %}
