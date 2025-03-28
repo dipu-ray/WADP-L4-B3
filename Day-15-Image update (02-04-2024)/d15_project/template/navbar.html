@@ -1,0 +1,27 @@
+<div class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn">Add Tables 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="{% url 'addstudent' %}">Add Student</a>
+        <a href="{% url 'addmark' %}">Add Mark</a>
+        <a href="{% url 'addteacher' %}">Add Teacher</a>
+        <a href="{% url 'addsubject' %}">Add Subject</a>
+        <a href="{% url 'adduniversity' %}">Add University</a>
+      </div>
+    </div> 
+    <div class="dropdown">
+      <button class="dropbtn">View Tables 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="{% url 'student' %}">Student Table</a>
+        <a href="{% url 'mark' %}">Mark Table</a>
+        <a href="{% url 'teacher' %}">Teacher Table</a>
+        <a href="{% url 'subject' %}">Subject Table</a>
+        <a href="{% url 'university' %}">University Table</a>
+        <a href="{% url 'alltable' %}">All Table</a>
+      </div>
+    </div> 
+  </div>
